@@ -21,7 +21,7 @@ class App extends Component {
         e.preventDefault();
 
         if (this.state.login === '' || this.state.pass === '') {
-            alert('Campos inválidos');
+            alert('Invalid Fields');
             return;
         }
 
@@ -38,13 +38,13 @@ class App extends Component {
         }).then( res => res.json())
         .then( (result) => {
             if (result.response) {
-                alert('Logado');
+                alert('Logged in !');
             } else if (result.error) {
-                alert('Login ou Senha inválidos');
+                alert('Woops , invalid login or password.');
             }
         })
         .catch( (err) => {
-            console.log(err);
+            alert(err);
         });
     }
 
